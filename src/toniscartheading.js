@@ -1,6 +1,15 @@
 var TonisHeading = React.createClass({
 
 
+  changeColour: function(target) {
+    var newState = {};
+    newState[target] = {
+      backgroundColor: RandomColour.randomColour()
+    };
+    this.setState(newState);
+  },
+
+
   getInitialState: function() {
     return {
       h1Colour: {
@@ -10,15 +19,6 @@ var TonisHeading = React.createClass({
         backgroundColor: RandomColour.randomColour()
       }
     }
-  },
-
-
-  changeColour: function(target) {
-    var newState = {};
-    newState[target] = {
-      backgroundColor: RandomColour.randomColour()
-    };
-    this.setState(newState);
   },
 
 
