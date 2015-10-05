@@ -4,38 +4,29 @@ var TonisHeading = React.createClass({
   getInitialState: function() {
     return {
       h1Colour: {
-        backgroundColor: '#fcd'
+        backgroundColor: RandomColour.randomColour()
       },
       h2Colour: {
-        backgroundColor: '#dcf'
+        backgroundColor: RandomColour.randomColour()
       }
     }
   },
 
 
-  handleH1Click: function(e) {
-    this.setState({
-      h1Colour: {
-        backgroundColor: RandomColour.randomColour()
-      }
-    });
-  },
-
-
-  handleH2Click: function(e) {
-    this.setState({
-      h2Colour: {
-        backgroundColor: RandomColour.randomColour()
-      }
-    });
+  changeColour: function(target) {
+    var newState = {};
+    newState[target] = {
+      backgroundColor: RandomColour.randomColour()
+    };
+    this.setState(newState);
   },
 
 
   render: function() {
     return (
       <div>
-        <h1 style={this.state.h1Colour} onClick={this.handleH1Click}>Welcome to {this.props.name} Cart</h1>
-        <h2 style={this.state.h2Colour} onClick={this.handleH2Click}>My first react Component set</h2>
+        <h1 style={this.state.h1Colour} onClick={this.changeColour.bind(this, 'h1Colour')}>Welcome to {this.props.name} Cart</h1>
+        <h2 style={this.state.h2Colour} onClick={this.changeColour.bind(this, 'h2Colour')}>My first react Component set</h2>
       </div>
     );
   }
