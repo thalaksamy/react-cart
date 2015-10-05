@@ -1,27 +1,27 @@
 var cartItems = [
   {
-    productName: 'Apple',
-    quantityBagged: 3,
-    unitPrice: 0.45
+    name: 'Apple',
+    qty: 3,
+    price: 0.45
   },
   {
-    productName: 'Banana',
-    quantityBagged: 1,
-    unitPrice: 0.35
+    name: 'Banana',
+    qty: 1,
+    price: 0.35
   },
   {
-    productName: 'Parsnip',
-    quantityBagged: 1,
-    unitPrice: 0.50
+    name: 'Parsnip',
+    qty: 1,
+    price: 0.50
   },
   {
-    productName: 'Potato',
-    quantityBagged: 10,
-    unitPrice: 0.10
+    name: 'Potato',
+    qty: 10,
+    price: 0.10
   },
   {
-    productName: 'Honey Pot',
-    quantityBagged: 2,
-    unitPrice: 3.50
+    name: 'Honey Pot',
+    qty: 2,
+    price: 3.50
   }
 ];
