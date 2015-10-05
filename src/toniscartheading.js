@@ -24,9 +24,9 @@ var TonisHeading = React.createClass({
 
   render: function() {
     return (
-      <div>
-        <h1 style={this.state.h1Colour} onClick={this.changeColour.bind(this, 'h1Colour')}>Welcome to {this.props.name} Cart</h1>
-        <h2 style={this.state.h2Colour} onClick={this.changeColour.bind(this, 'h2Colour')}>My first react Component set</h2>
+      <div class='tonis-heading'>
+        <h1 class='tonis-heading__heading' style={this.state.h1Colour} onClick={this.changeColour.bind(this, 'h1Colour')}>Welcome to {this.props.name} Cart</h1>
+        <h2 class='tonis-heading__strapline' style={this.state.h2Colour} onClick={this.changeColour.bind(this, 'h2Colour')}>My first react Component set</h2>
       </div>
     );
   }
