@@ -1,16 +1,6 @@
 var TonisHeading = React.createClass({
 
 
-  colourChars: {
-    0: 'a',
-    1: 'b',
-    2: 'c',
-    3: 'd',
-    4: 'e',
-    5: 'f'
-  },
-
-
   getInitialState: function() {
     return {
       h1Colour: {
@@ -26,7 +16,7 @@ var TonisHeading = React.createClass({
   handleH1Click: function(e) {
     this.setState({
       h1Colour: {
-        backgroundColor: this.randomColour()
+        backgroundColor: RandomColour.randomColour()
       }
     });
   },
@@ -35,19 +25,9 @@ var TonisHeading = React.createClass({
   handleH2Click: function(e) {
     this.setState({
       h2Colour: {
-        backgroundColor: this.randomColour()
+        backgroundColor: RandomColour.randomColour()
       }
     });
-  },
-
-
-  randomColour: function() {
-    return [
-      '#',
-      this.colourChars[Math.floor(Math.random() * 6)],
-      this.colourChars[Math.floor(Math.random() * 6)],
-      this.colourChars[Math.floor(Math.random() * 6)]
-    ].join('');
   },
 
 
