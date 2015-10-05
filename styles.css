@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: arial;
+  margin: 0;
+}
+
+h1,
+h2 {
+  margin: 0;
+  padding: 15px 10px;
+  width: 100%;
+}
+
+h1 {
+  color: #505;
+}
+
+h2 {
+  color: #055;
+}
+
+#heading {
+  background-color: #eee;
+}
