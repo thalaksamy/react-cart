@@ -6,11 +6,11 @@ var CartItem = React.createClass({
 
   render: function() {
     return (
-      <div key={this.props.key} className='cart-line'>
+      <div key={this.props.id} className='cart-line'>
         <div className='cart-line__name'>{this.props.name}</div>
         <div className='cart-line__change-qty'>
-          <a className='cart-line__qty-up'>+</a>
-          <a className='cart-line__qty-down'>-</a>
+          <a className='cart-line__qty-up' onClick={this.props.onQtyChanged.bind(null,this.props.id)}>+</a>
+          <a className='cart-line__qty-down' onClick={this.props.onQtyChanged.bind(null,this.props.id)}>-</a>
         </div>
         <div className='cart-line__quantity'>{this.props.qty}</div>
         <div className='cart-line__price'>£{Number(this.props.price).toFixed(2)}</div>
@@ -29,8 +29,9 @@ var AllCartItems = React.createClass({
 
   buildRows: function() {
     var rows = [];
+    var onQtyChanged = this.props.onQtyChanged;
     this.props.cartItems.forEach(function(cartItem) {
-      rows.push(<CartItem key={cartItem.id} name={cartItem.name} qty={cartItem.qty} price={cartItem.price} />);
+      rows.push(<CartItem id={cartItem.id} name={cartItem.name} qty={cartItem.qty} price={cartItem.price} onQtyChanged={onQtyChanged} />);
     });
     return rows;
   },
@@ -134,10 +135,14 @@ var Basket = React.createClass({
     return {cartItems};
   },
 
+  handleQtyChanged: function(cartItemId) {
+    console.log(cartItemId);
+  },
+
   render: function() {
     return (
       <main>
-        <AllCartItems cartItems={this.state.cartItems} />
+        <AllCartItems cartItems={this.state.cartItems} onQtyChanged={this.handleQtyChanged}/>
         <Totals cartItems={this.state.cartItems} />
       </main>
     );
