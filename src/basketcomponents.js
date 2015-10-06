@@ -1,7 +1,7 @@
 var CartItem = React.createClass({
 
   calculateTotal: function() {
-    return Math.round(this.props.price * this.props.qty * 100) / 100;
+    return Number(this.props.price * this.props.qty).toFixed(2);
   },
 
   render: function() {
@@ -14,7 +14,7 @@ var CartItem = React.createClass({
           <a className='cart-line__qty-up'>+</a>
           <a className='cart-line__qty-down'>-</a>
         </div>
-        <div className='cart-line__total'>{this.calculateTotal()}</div>
+        <div className='cart-line__total'>£{this.calculateTotal()}</div>
       </div>
     );
   }
@@ -72,14 +72,14 @@ var Discount = React.createClass({
 var TotalRow = React.createClass({
 
   calculateTotal: function(total) {
-    return Math.round(total * 100) / 100;
+    return Number(total).toFixed(2);
   },
 
   render: function() {
     return (
       <div className='total-row'>
         <span className='total-row__label'>{this.props.label}</span>
-        <span className='total-row__total'>{this.calculateTotal(this.props.total)}</span>
+        <span className='total-row__total'>£{this.calculateTotal(this.props.total)}</span>
       </div>
     );
   }
