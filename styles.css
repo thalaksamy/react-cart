@@ -31,6 +31,7 @@ body {
 
 
 .all-cart-items {
+  border: 1px solid #009;
   padding: 40px 10px;
   width: 100%;
 }
@@ -46,6 +47,7 @@ body {
 
 
 .totals {
+  border: 1px solid #606;
   padding: 40px 10px;
   width: 100%;
 }
