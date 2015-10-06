@@ -1,4 +1,4 @@
-var CartLine = React.createClass({
+var CartItem = React.createClass({
 
 
   calculateTotal: function() {
@@ -23,8 +23,3 @@ var CartLine = React.createClass({
 
 
 });
-
-React.render(
-  <CartLine name='Test Product' qty='5' price='5.99'/>,
-  document.getElementById('cart-item')
-);

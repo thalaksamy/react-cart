@@ -36,5 +36,5 @@ var TonisHeading = React.createClass({
 
 React.render(
   <TonisHeading name='Tonis'/>,
-  document.getElementById('heading')
+  document.getElementById('react-heading')
 );
