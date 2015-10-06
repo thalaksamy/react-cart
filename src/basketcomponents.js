@@ -6,7 +6,7 @@ var CartItem = React.createClass({
 
   render: function() {
     return (
-      <div key={this.props.id} className='cart-line'>
+      <div key={this.props.key} className='cart-line'>
         <div className='cart-line__name'>{this.props.name}</div>
         <div className='cart-line__change-qty'>
           <a className='cart-line__qty-up' onClick={this.props.onQtyChanged.bind(null,this.props.id)}>+</a>
@@ -31,7 +31,7 @@ var AllCartItems = React.createClass({
     var rows = [];
     var onQtyChanged = this.props.onQtyChanged;
     this.props.cartItems.forEach(function(cartItem) {
-      rows.push(<CartItem id={cartItem.id} name={cartItem.name} qty={cartItem.qty} price={cartItem.price} onQtyChanged={onQtyChanged} />);
+      rows.push(<CartItem key={cartItem.id} id={cartItem.id} name={cartItem.name} qty={cartItem.qty} price={cartItem.price} onQtyChanged={onQtyChanged} />);
     });
     return rows;
   },
