@@ -7,18 +7,18 @@ body {
   margin: 0;
 }
 
-.tonis-heading__heading,
-.tonis-heading__strapline {
+.heading__heading,
+.heading__strapline {
   margin: 0;
   padding: 15px 10px;
   width: 100%;
 }
 
-.tonis-heading__heading {
+.heading__heading {
   color: #505;
 }
 
-.tonis-heading__strapline {
+.heading__strapline {
   color: #055;
 }
 

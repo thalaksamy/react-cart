@@ -1,5 +1,4 @@
-var TonisHeading = React.createClass({
-
+var Heading = React.createClass({
 
   changeColour: function(target) {
     var newState = {};
@@ -8,7 +7,6 @@ var TonisHeading = React.createClass({
     };
     this.setState(newState);
   },
-
 
   getInitialState: function() {
     return {
@@ -21,20 +19,18 @@ var TonisHeading = React.createClass({
     }
   },
 
-
   render: function() {
     return (
-      <div className='tonis-heading'>
-        <h1 className='tonis-heading__heading' style={this.state.h1Colour} onClick={this.changeColour.bind(this, 'h1Colour')}>Welcome to {this.props.name} Cart</h1>
-        <h2 className='tonis-heading__strapline' style={this.state.h2Colour} onClick={this.changeColour.bind(this, 'h2Colour')}>My first react Component set</h2>
-      </div>
+      <header className='heading'>
+        <h1 className='heading__heading' style={this.state.h1Colour} onClick={this.changeColour.bind(this, 'h1Colour')}>Welcome to {this.props.name} Cart</h1>
+        <h2 className='heading__strapline' style={this.state.h2Colour} onClick={this.changeColour.bind(this, 'h2Colour')}>My first react Component set</h2>
+      </header>
     );
   }
-
 
 });
 
 React.render(
-  <TonisHeading name='Tonis'/>,
+  <Heading name='Tonis'/>,
   document.getElementById('react-heading')
 );
