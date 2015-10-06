@@ -35,7 +35,9 @@ var AllCartItems = React.createClass({
     return (
       <section className='all-cart-items'>
         <h1 className='all-cart-items__heading'>Cart Items</h1>
-        {rows}
+        <div className='all-cart-items__items'>
+          {rows}
+        </div>
       </section>
     );
   }
@@ -107,9 +109,9 @@ var Basket = React.createClass({
 
   render: function() {
     return (
-      <main className='basket'>
-        <AllCartItems className='basket__items' cartItems={this.props.cartItems} />
-        <Totals className='basket__totals' />
+      <main>
+        <AllCartItems cartItems={this.props.cartItems} />
+        <Totals />
       </main>
     );
   }
