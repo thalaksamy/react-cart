@@ -111,11 +111,15 @@ var Totals = React.createClass({
 
 var Basket = React.createClass({
 
+  getInitialState: function() {
+    return {cartItems};
+  },
+
   render: function() {
     return (
       <main>
-        <AllCartItems cartItems={this.props.cartItems} />
-        <Totals />
+        <AllCartItems cartItems={this.state.cartItems} />
+        <Totals cartItems={this.state.cartItems} />
       </main>
     );
   }
