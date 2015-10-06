@@ -29,7 +29,7 @@ var AllCartItems = React.createClass({
 
   render: function() {
     var rows = [];
-    JSON.parse(this.props.cartItems).forEach(function(cartItem) {
+    this.props.cartItems.forEach(function(cartItem) {
       rows.push(<CartItem key={cartItem.id} name={cartItem.name} qty={cartItem.qty} price={cartItem.price} />);
     });
     return (
@@ -123,6 +123,6 @@ var Basket = React.createClass({
 
 
 React.render(
-  <Basket cartItems={JSON.stringify(cartItems)} />,
+  <Basket cartItems={cartItems} />,
   document.getElementById('react-basket')
 );
