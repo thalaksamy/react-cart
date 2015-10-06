@@ -60,7 +60,7 @@ var Discount = React.createClass({
   render: function() {
     return (
       <div className='discount'>
-        <input className='discount__field' type='text' name='discount' />
+        <input className='discount__field' type='text' name='discount' value='0.1'/>
         <button className='discount__apply'>Apply Discount</button>
       </div>
     )
@@ -95,6 +95,9 @@ var TotalRow = React.createClass({
 
 var Totals = React.createClass({
 
+  discount: function() {
+    return 0 - this.total() * 0.1;
+  },
   subTotal: function() {
     var items = this.props.cartItems;
     var subTotal = 0;
@@ -109,6 +112,9 @@ var Totals = React.createClass({
   total: function() {
     return this.subTotal() + this.taxTotal();
   },
+  youPay: function() {
+    return this.total() - this.discount()
+  },
 
   render: function() {
     return (
@@ -116,10 +122,12 @@ var Totals = React.createClass({
         <h1 className='totals__heading'>Totals</h1>
         <div className='totals__details'>
           <TotalRow label='Sub Total' total={this.subTotal()}/>
-          <Discount />
           <TotalRow label='Discount Value' total=''/>
           <TotalRow label='Tax @ 20%' total={this.taxTotal()}/>
           <TotalRow label='Grand Total' total={this.total()}/>
+          <Discount />
+          <TotalRow label='Discount' total={this.discount()}/>
+          <TotalRow label='You Pay' total={this.youPay()}/>
         </div>
       </section>
     );
