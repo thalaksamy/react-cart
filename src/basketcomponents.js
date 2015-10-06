@@ -60,7 +60,7 @@ var Discount = React.createClass({
   render: function() {
     return (
       <div className='discount'>
-        <input className='discount__field' type='text' name='discount' value='0.1'/>
+        <input className='discount__field' type='text' name='discount' defaultValue='0.1'/>
         <button className='discount__apply'>Apply Discount</button>
       </div>
     )
