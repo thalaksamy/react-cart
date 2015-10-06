@@ -31,6 +31,6 @@ var Heading = React.createClass({
 });
 
 React.render(
-  <Heading name='Tonis'/>,
+  <Heading name='The' />,
   document.getElementById('react-heading')
 );

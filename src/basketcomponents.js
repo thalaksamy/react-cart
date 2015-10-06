@@ -30,7 +30,7 @@ var AllCartItems = React.createClass({
   render: function() {
     var rows = [];
     JSON.parse(this.props.cartItems).forEach(function(cartItem) {
-      rows.push(<CartItem key={cartItem.id} name={cartItem.name} qty={cartItem.qty} price={cartItem.price}/>);
+      rows.push(<CartItem key={cartItem.id} name={cartItem.name} qty={cartItem.qty} price={cartItem.price} />);
     });
     return (
       <section className='all-cart-items'>
@@ -67,7 +67,7 @@ var Basket = React.createClass({
   render: function() {
     return (
       <main className='basket'>
-        <AllCartItems className='basket__items' cartItems={this.props.cartItems}/>
+        <AllCartItems className='basket__items' cartItems={this.props.cartItems} />
         <Totals className='basket__totals' />
       </main>
     );
@@ -80,6 +80,6 @@ var Basket = React.createClass({
 
 
 React.render(
-  <Basket cartItems={JSON.stringify(cartItems)}/>,
+  <Basket cartItems={JSON.stringify(cartItems)} />,
   document.getElementById('react-basket')
 );
