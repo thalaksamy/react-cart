@@ -27,16 +27,20 @@ var CartItem = React.createClass({
 
 var AllCartItems = React.createClass({
 
-  render: function() {
+  buildRows: function() {
     var rows = [];
     this.props.cartItems.forEach(function(cartItem) {
       rows.push(<CartItem key={cartItem.id} name={cartItem.name} qty={cartItem.qty} price={cartItem.price} />);
     });
+    return rows;
+  },
+
+  render: function() {
     return (
       <section className='all-cart-items'>
         <h1 className='all-cart-items__heading'>Cart Items</h1>
         <div className='all-cart-items__items'>
-          {rows}
+          {this.buildRows()}
         </div>
       </section>
     );
