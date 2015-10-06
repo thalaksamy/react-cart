@@ -7,6 +7,10 @@ body {
   margin: 0;
 }
 
+
+
+
+
 .heading__heading,
 .heading__strapline {
   margin: 0;
@@ -22,6 +26,32 @@ body {
   color: #055;
 }
 
-#heading {
-  background-color: #eee;
+
+
+
+
+.all-cart-items {
+  width: 100%;
+  padding: 40px 10px;
+}
+@media (min-width: 800px) {
+  .all-cart-items {
+    width: 75%;
+    display: inline-block;
+  }
+}
+
+
+
+
+
+.totals {
+  width: 100%;
+  padding: 40px 10px;
+}
+@media (min-width: 800px) {
+  .totals {
+    width: 25%;
+    display: inline-block;
+  }
 }
