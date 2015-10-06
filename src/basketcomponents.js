@@ -113,7 +113,7 @@ var Totals = React.createClass({
     return this.subTotal() + this.taxTotal();
   },
   youPay: function() {
-    return this.total() - this.discount()
+    return this.total() + this.discount()
   },
 
   render: function() {
