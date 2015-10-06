@@ -15,6 +15,7 @@ h2 {
 .all-cart-items__heading,
 .totals__heading {
   margin-bottom: 15px;
+  text-align: center;
 }
 
 
@@ -56,6 +57,43 @@ h2 {
 
 
 
+.cart-line {
+  border-bottom: 1px solid #aac;
+  display: block;
+  padding: 12px 0;
+  text-align: center;
+  width: 100%;
+}
+.cart-line:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.cart-line__name,
+.cart-line__quantity,
+.cart-line__price,
+.cart-line__change-qty,
+.cart-line__total {
+  display: inline-block;
+  width: 20%;
+}
+.cart-line__qty-up,
+.cart-line__qty-down {
+  font-size: 2.4em;
+  margin-right: 15px;
+}
+.cart-line__qty-up:hover,
+.cart-line__qty-down:hover {
+  color: #fff;
+  cursor: pointer;
+}
+.cart-line__qty-down {
+  margin-right: none;
+}
+
+
+
+
+
 .totals {
   background-color: #fdf;
   float: right;
@@ -67,4 +105,32 @@ h2 {
     display: inline-block;
     width: 25%;
   }
+}
+
+
+
+
+
+.total-row {
+  display: block;
+  margin-bottom: 12px;
+  width: 100%;
+}
+.total-row:last-of-type {
+  margin-bottom: 0;
+}
+.total-row__total {
+  float: right;
+  text-align: right;
+  width: 40%;
+}
+
+
+
+
+
+.discount {
+  display: block;
+  margin-bottom: 12px;
+  width: 100%;
 }
