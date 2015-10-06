@@ -134,3 +134,40 @@ h2 {
   margin-bottom: 12px;
   width: 100%;
 }
+
+/* SASSY EXAMPLE */
+.cart-line {
+  border-bottom: 1px solid #aac;
+  display: block;
+  padding: 12px 0;
+  text-align: center;
+  width: 100%;
+
+  &:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  &__name,
+  &__quantity,
+  &__price,
+  &__change-qty,
+  &__total {
+    display: inline-block;
+    width: 20%;
+  }
+  &__qty {
+    &-up,
+    &-down {
+      font-size: 2.4em;
+      margin-right: 15px;
+      &:hover,
+      &:hover {
+        color: #fff;
+        cursor: pointer;
+      }
+    }
+    &-down {
+      margin-right: none;
+    }
+  }
+}
