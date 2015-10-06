@@ -12,6 +12,11 @@ h2 {
   margin: 0;
 }
 
+.all-cart-items__heading,
+.totals__heading {
+  margin-bottom: 15px;
+}
+
 
 
 

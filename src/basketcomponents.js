@@ -46,12 +46,53 @@ var AllCartItems = React.createClass({
 
 
 
+var Discount = React.createClass({
+
+  render: function() {
+    return (
+      <div className='discount'>
+        <input className='discount__field' type='text' name='discount' />
+        <button className='discount__apply'>Apply Discount</button>
+      </div>
+    )
+  }
+
+});
+
+
+
+
+
+var TotalRow = React.createClass({
+
+  render: function() {
+    return (
+      <div className='total-row'>
+        <span className='total-row__label'>{this.props.label}</span>
+        <span className='total-row__total'>{this.props.total}</span>
+      </div>
+    );
+  }
+
+});
+
+
+
+
+
 var Totals = React.createClass({
 
   render: function() {
     return (
       <section className='totals'>
         <h1 className='totals__heading'>Totals</h1>
+        <div className='totals__details'>
+          <TotalRow label='Sub Total' total=''/>
+          <Discount />
+          <TotalRow label='Discount Value' total=''/>
+          <TotalRow label='Tax @ 20%' total=''/>
+          <TotalRow label='Grand Total' total=''/>
+        </div>
       </section>
     );
   }
