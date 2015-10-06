@@ -71,11 +71,15 @@ var Discount = React.createClass({
 
 var TotalRow = React.createClass({
 
+  calculateTotal: function(total) {
+    return Math.round(total * 100) / 100;
+  },
+
   render: function() {
     return (
       <div className='total-row'>
         <span className='total-row__label'>{this.props.label}</span>
-        <span className='total-row__total'>{this.props.total}</span>
+        <span className='total-row__total'>{this.calculateTotal(this.props.total)}</span>
       </div>
     );
   }
@@ -88,16 +92,31 @@ var TotalRow = React.createClass({
 
 var Totals = React.createClass({
 
+  subTotal: function() {
+    var items = this.props.cartItems;
+    var subTotal = 0;
+    for (var x = 0; x < items.length; x ++) {
+      subTotal += items[x].price * items[x].qty;
+    }
+    return subTotal;
+  },
+  taxTotal: function() {
+    return this.subTotal() / 100 * 20;
+  },
+  total: function() {
+    return this.subTotal() + this.taxTotal();
+  },
+
   render: function() {
     return (
       <section className='totals'>
         <h1 className='totals__heading'>Totals</h1>
         <div className='totals__details'>
-          <TotalRow label='Sub Total' total=''/>
+          <TotalRow label='Sub Total' total={this.subTotal()}/>
           <Discount />
           <TotalRow label='Discount Value' total=''/>
-          <TotalRow label='Tax @ 20%' total=''/>
-          <TotalRow label='Grand Total' total=''/>
+          <TotalRow label='Tax @ 20%' total={this.taxTotal()}/>
+          <TotalRow label='Grand Total' total={this.total()}/>
         </div>
       </section>
     );
